@@ -5,9 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build",
     "start": "next start",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "format": "prettier --write .",
     "test": "vitest run --passWithNoTests",
     "test:e2e": "playwright test",
