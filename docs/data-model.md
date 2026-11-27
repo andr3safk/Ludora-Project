@@ -214,7 +214,9 @@ pnpm db:generate
 pnpm db:migrate
 ```
 
-La migración inicial generada es `drizzle/0000_smooth_omega_sentinel.sql`. Incluye
-enums, tablas, constraints, índices, FKs (incluida `REFERENCES auth.users(id)`),
-`ENABLE ROW LEVEL SECURITY` y todas las políticas. **No se ha ejecutado
-`pnpm db:migrate`** contra la base de datos real.
+La migración inicial es `drizzle/0000_smooth_omega_sentinel.sql`. Incluye enums,
+tablas, constraints, índices, FKs (incluida `REFERENCES auth.users(id)`),
+`ENABLE ROW LEVEL SECURITY` y todas las políticas. Ya se aplicó al proyecto de
+Supabase y quedó registrada en `drizzle.__drizzle_migrations`; se verificaron las 8
+tablas con RLS activo y las 13 políticas. Para futuras migraciones, usa
+`pnpm db:migrate`.
